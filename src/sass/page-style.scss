@@ -1,0 +1,61 @@
+@import "@/sass/variables/colors";
+
+.api-container {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  top: 50px;
+  display: flex;
+  flex-flow: column;
+
+  .info-field {
+    margin: 1rem;
+  }
+
+  .api-form-container {
+    display: flex;
+    position: relative;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .response-data-field::-webkit-scrollbar {
+    display: none;
+  }
+
+  .response-data-field {
+    height: 500px;
+    min-width: 300px;
+    padding: 1rem;
+    margin: 1rem;
+    
+    overflow-y: scroll;
+
+    .api-item-description-header {
+      color: $dark-secondary;
+      font-weight: bolder;
+    }
+
+    .api-item-description-header::after {
+      content: ":";
+    }
+
+    .api-item-attribute {
+      .api-item-key {
+        color: $dark-primary;
+        font-weight: bolder;
+      }
+
+      .api-item-key::after {
+        content: ":";
+      }
+    }
+
+  }
+}
