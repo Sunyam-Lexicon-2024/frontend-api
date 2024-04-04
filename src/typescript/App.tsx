@@ -1,9 +1,12 @@
 import React, { useState } from "react"
-import "@/sass/app-style.scss"
 import Footer from "./Footer"
 import Navigation from "./Navigation"
 import StarWars from "./StarWars/StarWars"
 import CardGame from "./CardGame/CardGame"
+import CssBaseline from "@mui/material/CssBaseline"
+import { ThemeProvider } from "@emotion/react"
+import { theme } from "./theme"
+import { Box } from "@mui/material"
 
 function App() {
 	const [pageTitle, setPageTitle] = useState("Star Wars")
@@ -34,13 +37,12 @@ function App() {
 	}
 
 	return (
-		<>
-			<Navigation
-				loadComponent={(event) => toggleComponent(event)}
-			/>
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Navigation loadComponent={(event) => toggleComponent(event)} />
 			{content}
 			<Footer />
-		</>
+		</ThemeProvider>
 	)
 }
 

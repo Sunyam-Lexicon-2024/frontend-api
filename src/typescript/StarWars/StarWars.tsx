@@ -1,5 +1,13 @@
-import "@/sass/page-style.scss"
 import React, { useState } from "react"
+import {
+	Box,
+	Button,
+	Card,
+	CardContent,
+	FormControl,
+	Grid,
+	Input,
+} from "@mui/material"
 import CharacterDisplay from "./CharacterDisplay"
 
 export default function StarWars() {
@@ -23,24 +31,40 @@ export default function StarWars() {
 	}
 
 	return (
-		<div className="api-container">
-			<span className="info-field">
-				Search the <a href="https://www.swapi.tech/api/people">swapi.tech</a>{" "}
-				API for a given Star Wars character.
-			</span>
-			<div className="api-form-container">
-				<form onSubmit={(event) => get(event)}>
-					<input
-						type="text"
-						name="Star Wars Character"
-						placeholder="enter character name"
-					/>
-					<button type="submit">Search</button>
-				</form>
-				<CharacterDisplay
-					characterDataList={characterData}
-				/>
-			</div>
-		</div>
+		<Grid
+			direction={"column"}
+			sx={{
+				p: 1,
+				justifyContent: "center",
+			}}
+			container>
+			<Grid
+				item
+				xs={4}>
+				<Card sx={{ m: 1, p: 1, maxWidth: 500 }}>
+					<CardContent className="info-field">
+						Search the{" "}
+						<a href="https://www.swapi.tech/api/people">swapi.tech</a> API for a
+						given Star Wars character.
+					</CardContent>
+					<form onSubmit={(event) => get(event)}>
+						<FormControl
+							sx={{
+								display: "flex",
+								justifyContent: "center",
+							}}>
+							<Input
+								sx={{ p: 1, m: 1 }}
+								type="text"
+								name="Star Wars Character"
+								placeholder="Enter character name"
+							/>
+							<Button type="submit">Search</Button>
+						</FormControl>
+					</form>
+				</Card>
+			</Grid>
+			<CharacterDisplay characterDataList={characterData} />
+		</Grid>
 	)
 }

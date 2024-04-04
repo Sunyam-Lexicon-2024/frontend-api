@@ -1,4 +1,3 @@
-import "@/sass/page-style.scss"
 import React, { useState } from "react"
 import CardDisplay from "./CardDisplay"
 

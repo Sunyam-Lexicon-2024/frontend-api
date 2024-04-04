@@ -1,4 +1,3 @@
-import "@/sass/navigation-style.scss"
 import React from "react"
 import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
@@ -27,7 +26,7 @@ export default function Navigation({loadComponent}: INavProps) {
 	}
 
 	return (
-		<AppBar position="static">
+		<AppBar position="static" color="primary" enableColorOnDark>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<ApiIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
