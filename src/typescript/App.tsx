@@ -36,7 +36,6 @@ function App() {
 	return (
 		<>
 			<Navigation
-				pageTitle={pageTitle}
 				loadComponent={(event) => toggleComponent(event)}
 			/>
 			{content}
