@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import {
-	Box,
 	Button,
 	Card,
 	CardContent,
@@ -8,11 +7,13 @@ import {
 	Grid,
 	Input,
 } from "@mui/material"
+import { theme } from "../theme"
 import CharacterDisplay from "./CharacterDisplay"
 
 export default function StarWars() {
-	const apiRoot = "https://www.swapi.tech/api/people?name="
 	const [characterData, setCharacterData] = useState([] as StarWarsCharacter[])
+	const linkColor = theme.palette.link.light
+	const apiRoot = "https://www.swapi.tech/api/people?name="
 
 	async function get(event: React.FormEvent) {
 		event.preventDefault()
@@ -42,10 +43,15 @@ export default function StarWars() {
 				item
 				xs={4}>
 				<Card sx={{ m: 1, p: 1, maxWidth: 500 }}>
-					<CardContent className="info-field">
-						Search the{" "}
-						<a href="https://www.swapi.tech/api/people">swapi.tech</a> API for a
-						given Star Wars character.
+					<CardContent>
+						Search the
+						<a
+							style={{ textDecoration: "none", color: linkColor }}
+							href="https://www.swapi.tech/api/people">
+							{" "}
+							swapi.tech
+						</a>{" "}
+						API for a given Star Wars character.
 					</CardContent>
 					<form onSubmit={(event) => get(event)}>
 						<FormControl

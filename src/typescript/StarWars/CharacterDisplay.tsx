@@ -42,7 +42,7 @@ export default function CharacterDisplay({ characterDataList }: DataListProps) {
 			field: "name",
 			headerClassName: "data-table-header",
 			headerName: "Name",
-			width: 100,
+			width: 150,
 		},
 		{
 			field: "birth_year",
@@ -90,25 +90,25 @@ export default function CharacterDisplay({ characterDataList }: DataListProps) {
 			field: "homeworld",
 			headerClassName: "data-table-header",
 			headerName: "Homeworld",
-			width: 100,
+			width: 154,
 		},
 		{
 			field: "url",
 			headerClassName: "data-table-header",
 			headerName: "URL",
-			width: 100,
+			width: 150,
 		},
 		{
 			field: "created",
 			headerClassName: "data-table-header",
 			headerName: "Created",
-			width: 100,
+			width: 125,
 		},
 		{
 			field: "edited",
 			headerClassName: "data-table-header",
 			headerName: "Edited",
-			width: 100,
+			width: 125,
 		},
 	]
 
