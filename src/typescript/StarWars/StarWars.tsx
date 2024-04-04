@@ -20,6 +20,8 @@ export default function StarWars() {
 		let form = event.target as HTMLFormElement
 		let searchQuery = new FormData(form).values().next().value
 
+		if (searchQuery == "") return
+
 		let response = await fetch(apiRoot + searchQuery)
 			.catch((err) => console.error(err))
 			.then((response) => response)
